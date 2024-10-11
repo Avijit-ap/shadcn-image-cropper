@@ -96,6 +96,7 @@ export function ImageCropper({
     }
   }
 
+  
   return (
     <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
       <DialogTrigger>
@@ -107,8 +108,8 @@ export function ImageCropper({
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </DialogTrigger>
-      <DialogContent className="p-0 gap-0">
-        <div className="p-6 size-full">
+      <DialogContent className="p-0 gap-0 max-w-[90vw] w-[600px] max-h-[90vh] flex flex-col">
+        <div className="p-6 flex-grow overflow-auto">
           <ReactCrop
             crop={crop}
             onChange={(_, percentCrop) => setCrop(percentCrop)}
@@ -119,7 +120,7 @@ export function ImageCropper({
             <Avatar className="size-full rounded-none">
               <AvatarImage
                 ref={imgRef}
-                className="size-full rounded-none "
+                className="size-full rounded-none object-contain"
                 alt="Image Cropper Shell"
                 src={selectedFile?.preview}
                 onLoad={onImageLoad}
@@ -130,7 +131,7 @@ export function ImageCropper({
             </Avatar>
           </ReactCrop>
         </div>
-        <DialogFooter className="p-6 pt-0 justify-center ">
+        <DialogFooter className="p-6 pt-0 justify-center shrink-0">
           <DialogClose asChild>
             <Button
               size={"sm"}

@@ -116,7 +116,7 @@ export function ImageCropper({
                 ref={imgRef}
                 className="size-full rounded-none object-contain aspect-auto"
                 alt="Image Cropper Shell"
-                src={selectedFile?.preview}The image cropper dialog was showing a scrollbar that impacted the visual design.
+                src={selectedFile?.preview}
                 onLoad={onImageLoad}
               />
               <AvatarFallback className="size-full min-h-[460px] rounded-none">
